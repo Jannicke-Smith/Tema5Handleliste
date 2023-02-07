@@ -17,3 +17,33 @@ h1 {
     align-items: center
  }
  
+ /*flex eksempel til oppgaven*/
+/*
+ .flex-container {
+    background-color: darkcyan;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 0.6rem;
+    height: 100vh;
+    align-items: center;
+ }
+
+ .flex-item {
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: cadetblue;
+    width: 10rem;
+    height: 8rem;
+    color: aliceblue;
+ }
+
+ .flex-item-1 {
+    align-self: flex-end;
+
+ }
+
+ .flex-item-2 {
+    height: 20rem;
+ }
