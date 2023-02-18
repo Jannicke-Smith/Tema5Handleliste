@@ -9,34 +9,93 @@ h1 {
     padding: 1rem;
     text-align: center;
 }
- body {
+ main {
     display: flex;
     flex-flow: column nowrap;
     gap: 1rem;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    
+ }
+
+ .bakgrunnsbilde {
+   height: fit-content;
+   width: fit-content;
+   display: no-repeat;
+   flex-wrap: nowrap;
+    
+    
+ }
+
+ ul li {
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+    list-style: none;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
  }
  
+ ul li:nth-child(odd) {
+    background: #f9f9f9;
+ }
+
+ ul li:hover {
+    background: #ddd;
+ }
+
+ ul li .checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2 px 0;
+    top: 10px;
+    left: 1rem;
+    transform: rotate(45deg);
+    height: 1rem;
+    width: 0.5rem;
+ }
+
+ .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.8rem 1rem 0.8rem 1 rem;
+ }
+ 
+ .close:hover {
+    background-color: #f44336;
+    color: white;
+ }
+
+ .addButton:hover {
+    background-color: #bbb;
+ }
+
+ .addItem:hover {
+    background-color: #bbb;
+ }  
+
  /*flex eksempel til oppgaven*/
-/*
+
  .flex-container {
-    background-color: darkcyan;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 0.6rem;
-    height: 100vh;
     align-items: center;
  }
 
  .flex-item {
     padding: 1rem;
     font-size: 2rem;
-    background-color: cadetblue;
     width: 10rem;
     height: 8rem;
-    color: aliceblue;
  }
 
  .flex-item-1 {
@@ -47,3 +106,20 @@ h1 {
  .flex-item-2 {
     height: 20rem;
  }
+
+button {
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    row-gap: 0.2rem;
+}
+
+input {
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    
+}
+.checkbox {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+/* kilde kode på nett til check, uncheck items on the list : https://www.w3schools.com/howto/howto_ja_todolist.asp */
