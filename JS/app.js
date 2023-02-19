@@ -51,10 +51,11 @@ function renderList() {
         let closeElement = document.createElement('button');
         let textElement = document.createElement('span');
 
-        //sette classname på checkboxElement og på closeElement
+        //sette classname på checkboxElement, på closeElement og på textElement
         checkboxElement.className = "checkbox";
         closeElement.className = "close";
-        
+        textElement.className = "shopping-item-text"
+
         //setter teksten til å være det samme som er i listen på "i" sin plass. Siden dette øker hver gang vil den gå igjennom hele listen
         textElement.textContent = list[i];
 
