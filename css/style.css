@@ -18,7 +18,8 @@ h1 {
     
  }
 
- .bakgrunnsbilde {
+ .background-image {
+   background-repeat: no-repeat;
    height: fit-content;
    width: fit-content;
    display: no-repeat;
@@ -52,7 +53,7 @@ h1 {
     position: absolute;
     border-color: #fff;
     border-style: solid;
-    border-width: 0 2px 2 px 0;
+    border-width: 0 2px 2px 0;
     top: 10px;
     left: 1rem;
     transform: rotate(45deg);
@@ -61,16 +62,19 @@ h1 {
  }
 
  .close {
+    content: '';
     position: absolute;
-    right: 0;
-    top: 0;
-    padding: 0.8rem 1rem 0.8rem 1rem;
+    border-style: solid;
+    border-radius: 0.2rem;
+    border-width: 0.1rem;
+    right: 0.1rem;
+    top: 0.3rem;
     height: 1.5rem;
     width: 1.5rem;
  }
  
  .close:hover {
-    background-color: #f44336;
+    background-color: #f44336; 
     color: white;
  }
 
@@ -82,7 +86,6 @@ h1 {
     background-color: #bbb;
  }  
 
- /*flex eksempel til oppgaven*/
 
  .flex-container {
     display: flex;
@@ -96,8 +99,8 @@ h1 {
  .flex-item {
     padding: 1rem;
     font-size: 2rem;
-    width: 10rem;
-    height: 8rem;
+    width: 20rem;
+    height: 10rem;
  }
 
  .flex-item-1 {
