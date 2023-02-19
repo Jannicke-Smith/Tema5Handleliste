@@ -68,12 +68,10 @@ function renderList() {
         //sette attributter på checkboxelement
         checkboxElement.setAttribute("type", "checkbox");
         if(list[i].checked){
-            checkboxElement.checked = true
+            checkboxElement.checked = true;
         }
-        checkboxElement.onclick = function () {
-            this.checked = true;
-            list[i].checked = true
-        }
+        checkboxElement.onclick = function() {checkCheckbox(i)}
+
 
         //legge til en X i closeElement og en ID
         closeElement.id = i;
@@ -95,6 +93,16 @@ function renderList() {
 function removeItem(id){
     //her fjerner vi valgte element i listen basert på IDen til objektet vi skal fjerne
     list.splice(id, 1);
+    updateLocalStorage();
+}
+
+//kode for å sjekke av om du har handlet et produkt eller ikke, og oppdaterer koden i localstorage.
+function checkCheckbox(id){
+    if(list[id].checked){
+        list[id].checked = false
+    }else{
+        list[id].checked = true
+    }
     updateLocalStorage();
 }
 
