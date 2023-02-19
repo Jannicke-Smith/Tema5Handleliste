@@ -30,6 +30,16 @@ h1 {
     row-gap: 0.2rem;
     padding: 0.3rem;
 }
+
+.addButton:hover {
+    background-color: #d9d7d7;
+ }
+
+ .addItem:hover {
+    background-color: #bbb;
+ }  
+
+
  ul li {
     cursor: pointer;
     position: relative;
@@ -85,15 +95,6 @@ h1 {
     background-color: #f44336; 
     color: white;
  }
-
- .addButton:hover {
-    background-color: #bbb;
- }
-
- .addItem:hover {
-    background-color: #bbb;
- }  
-
 
  .flex-container {
     display: flex;

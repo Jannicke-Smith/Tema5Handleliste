@@ -26,8 +26,13 @@ getLocalStorage();
 
 //legge til nye ting i list
 function addItemToList() {
-    //Legger det som står i inputfeltet inn i listen
-    list.push(inputElement.value);
+    //Legger det som står i inputfeltet inn i listen, s
+    let item = {
+        itemname: inputElement.value,
+        checked: false
+    }
+    list.push(item);
+    //list.push(inputElement.value);
     //Blanker ut verdien i input feltet
     inputElement.value = "";
     //oppdaterer localstorage med det nye elementet som er lagt til i listen
@@ -45,6 +50,7 @@ function renderList() {
 
       //for hvert element i listen så lager vi et nytt listeelement
     for(let i = 0; i<list.length; i++){
+        console.log(list)
         //lage li element, et checkbox element, et fjernne elenment og et textelement
         let liElement = document.createElement('li');
         let checkboxElement = document.createElement('input');
@@ -57,10 +63,17 @@ function renderList() {
         textElement.className = "shopping-item-text"
 
         //setter teksten til å være det samme som er i listen på "i" sin plass. Siden dette øker hver gang vil den gå igjennom hele listen
-        textElement.textContent = list[i];
+        textElement.textContent = list[i].itemname;
 
         //sette attributter på checkboxelement
         checkboxElement.setAttribute("type", "checkbox");
+        if(list[i].checked){
+            checkboxElement.checked = true
+        }
+        checkboxElement.onclick = function () {
+            this.checked = true;
+            list[i].checked = true
+        }
 
         //legge til en X i closeElement og en ID
         closeElement.id = i;
@@ -98,6 +111,8 @@ function updateLocalStorage(){
 //objekt må disse konverteres til et vanlig array. Det gjøres med JSON.parse. Denne funksjonen kjører med en gang siden åpnes
 //for å hente alt som ligger i localstorage fra før.
 function getLocalStorage(){
-    list = JSON.parse(localStorage.getItem("list"));
+    if(localStorage.getItem("list").toString != null){
+        list = JSON.parse(localStorage.getItem("list"));
+    }
     renderList();
 }
